@@ -11,7 +11,6 @@ app = Flask(__name__)
 mp_pose = mp.solutions.pose
 
 def is_valid_url(url):
-    """Validate the URL format."""
     try:
         result = urlparse(url)
         return all([result.scheme, result.netloc])
@@ -19,7 +18,6 @@ def is_valid_url(url):
         return False
 
 def download_image(image_url):
-    """Download image from URL."""
     try:
         response = requests.get(image_url)
         response.raise_for_status()
@@ -30,7 +28,6 @@ def download_image(image_url):
         raise ValueError(f"Error downloading image: {str(e)}")
 
 def calculate_body_asymmetry(landmarks):
-    """Calculate body asymmetry percentage."""
     left_points = np.array([
         [landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER.value].y],
         [landmarks[mp_pose.PoseLandmark.LEFT_HIP.value].y],

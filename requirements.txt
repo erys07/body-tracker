@@ -4,7 +4,4 @@ opencv-python
 imutils
 mediapipe
 gunicorn
-cv2
 requests
-urllib.parse
-io

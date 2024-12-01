@@ -74,7 +74,7 @@ def calculate_asymmetry():
         landmarks = results.pose_landmarks.landmark
         asymmetry_percentage = calculate_body_asymmetry(landmarks)
         
-        if asymmetry_percentage > 20:
+        if asymmetry_percentage > 10:
             return jsonify({
                 "asymmetry_percentage": round(asymmetry_percentage, 2),
                 "message": "Assimétrico"
